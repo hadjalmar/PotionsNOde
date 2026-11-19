@@ -8,6 +8,14 @@ const router = express.Router();
 
 router.get("/",async(req,res)=>{
     try{
+        const {name,effect,IsDangeorus}= req.query
+        if(IsDangeorus === "true"){
+            IsDangeorus = true
+        }
+        else{
+            IsDangeorus = false
+        }
+        IsDangeorus = IsDangeorus === "true"
         const allpotions= await db.select().from(potions);
         return res.status(200).json(allpotions);
     }
