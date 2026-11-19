@@ -10,7 +10,7 @@ const users = mysqlTable("users", {
 const potions = mysqlTable("potions", {
   id: int("id").primaryKey().autoincrement(),
   name: varchar("name", { length: 255 }),
-  effect: varchar("effect", { length: 255 }).notNull().unique(),
+  effect: varchar("effect", { length: 255 }).notNull(),
   IsDangeorus: boolean("IsDangeorus").default(false),
 
 });
