@@ -11,7 +11,7 @@ router.get("/api/potions",async(req,res)=>{
         return res.status(200).json(allpotions);
     }
     catch(err){
-        return res.status(500).json({err:err.message})
+        return res.status(500).json({error:err.message})
     }
 })
 module.exports(router)
